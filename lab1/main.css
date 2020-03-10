@@ -1,0 +1,199 @@
+body {
+    background: -webkit-linear-gradient(left, #f0fcff, #f9ffe6);
+}
+
+#navBox,#leftNavBox{
+    font-weight: bold;
+}
+
+#container {
+    min-height: 100%;
+    position: relative;
+}
+
+/*navBox(top)*/
+#navBox {
+    float: top;
+    align-content: center;
+    height: 60px;
+}
+
+#navBox img#logo{
+    height: 30px;
+    alignment:top;
+    float: left;
+}
+
+a {
+    text-decoration: none;
+}
+
+#navBox .singleMenu,.singleMenu_right {
+    width: 100px;
+    padding: 5px 0;
+    position: relative;
+    display: inline-block;
+    color: #696969;
+    transition: .7s;
+}
+
+.singleMenu_right{
+    float: right;
+}
+
+#navBox .singleCont {
+    width: 100px;
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    padding: 12px 16px;
+    transition: .7s;
+}
+
+#navBox #selected {
+    background-color: #999999;
+    color: white;
+}
+
+#navBox .singleMenu,.singleMenu_right:hover {
+    background-color: #999999;
+    color: white;
+}
+
+#navBox .singleMenu,.singleMenu_right:hover .singleCont {
+    display: block;
+}
+
+#navBox .singleItem {
+    display: inline-block;
+    float: left;
+    color: #696969;
+    width: 100px;
+    transition: .7s;
+}
+
+#navBox .singleItem:hover {
+    background-color: #999999;
+    color: white;
+}
+
+#navBox #navRight{
+    float: right;
+}
+
+/*/navBox*/
+/*foot(bottom)*/
+div#foot {
+    position: absolute;
+    bottom: 0;
+    width: 99.6%;
+    height: 60px;
+    vertical-align: middle;
+    display: inline-block;
+    text-align: center;
+    background-color: #696969;
+    color: white;
+    clear: both;
+}
+
+/*/foot*/
+/*content*/
+#left {
+    display: block;
+    width: 10%;
+    float: left;
+    margin-right: 10px;
+}
+
+#leftNavBox h2{
+    width: 100%;
+    position: relative;
+    padding: 15px 0;
+    text-align: center;
+    font-size: 16px;
+    color: #696969;
+    transition: .7s;
+}
+
+#leftNavBox h2:hover{
+    background-color: #999999;
+    color: white;
+}
+
+/*#leftNavBox .singleMenu .singleCont{*/
+/*    display: none;*/
+/*    width: 100px;*/
+/*    position: absolute;*/
+/*    background-color: #f9f9f9;*/
+/*    min-width: 160px;*/
+/*    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);*/
+/*    padding: 12px 16px;*/
+/*}*/
+
+/*#leftNavBox .singleMenu:hover .singleCont{*/
+/*    display: block;*/
+/*}*/
+
+#content {
+    display: block;
+    float: left;
+    alignment: center;
+    width: 66%;
+    margin-right: 20px;
+    border-width: 5px;
+    border-color: black;
+    border-radius: 10px;
+}
+
+table.contTable {
+    width: 90%;
+    display: block;
+    text-align: center;
+    margin: 20px;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 2px #000;
+}
+
+table.contTable tbody{
+    width: 100%;
+}
+
+table.contTable tr th{
+    width: 100%;
+}
+
+table.contTable tr th:first-child, table.contTable tr td:first-child { /*设置table.navTable左边边框*/
+    border-left: 2px solid #eaeaea;
+}
+
+table.contTable tr th:last-child, table.contTable tr td:last-child { /*设置table.navTable右边边框*/
+    border-right: 2px solid #eaeaea;
+}
+
+table.contTable tr td:first-child, table.contTable tr td:nth-child(2), table.contTable tr td:nth-child(3), table.contTable tr td:last-child { /*设置table.navTable表格每列底部边框*/
+    border-bottom: 2px solid #eaeaea;
+}
+
+table.contTable tr th {
+    background: #eaeaea;
+}
+
+table.contTable tr:first-child th:first-child {
+    border-top-left-radius: 12px;
+}
+
+table.contTable tr:first-child th:last-child {
+    border-top-right-radius: 12px;
+}
+
+table.contTable tr:last-child td:first-child {
+    border-bottom-left-radius: 12px;
+}
+
+table.contTable tr:last-child td:last-child {
+    border-bottom-right-radius: 12px;
+}
+/*/content*/
