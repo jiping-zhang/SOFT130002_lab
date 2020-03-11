@@ -216,3 +216,21 @@ table.contTable tr:last-child td:last-child {
     border-bottom-right-radius: 12px;
 }
 /*/content*/
+#returnTop {
+    width: 50px;
+    height: 50px;
+    line-height: 25px;
+    background-color: rgba(9, 0, 212, 0.40);
+    color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 10px;
+    position: fixed;
+    right: 100px;
+    bottom: 20%;
+    z-index: 1000;
+}
+#returnTop:hover{
+    background-color: rgba(68, 0, 212, 0.8);
+}
