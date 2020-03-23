@@ -1,0 +1,26 @@
+
+
+#content .singleRecCol{
+    border: 1px black solid;
+    border-radius: 5px;
+    margin: 2px 2px ;
+}
+
+#content .zan{
+    color: #ef89a2;
+    font-weight: bold;
+}
+
+#content #pageBox{
+    float: right;
+}
+
+table.contTable {
+    width: 90%;
+    display: block;
+    text-align: center;
+    margin: 20px;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 2px #000;
+}
