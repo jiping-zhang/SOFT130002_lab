@@ -156,10 +156,6 @@ body {
     border-radius: 10px;
     overflow: hidden;
 }
-
-#content *{
-    margin: 10px;
-}
 /*/content*/
 /*foot(bottom)*/
 div#foot {
