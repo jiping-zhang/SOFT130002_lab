@@ -1,3 +1,8 @@
+#content{
+    margin: 10px 10% 80px;
+    width: 80%;
+}
+
 #content *{
     margin: 10px;
 }
@@ -64,4 +69,69 @@ table.contTable {
 #pageBox .singleItem:hover {
     color: white;
     background-color: #999999;
+}
+
+#contBrowser{
+    width: 100%;
+    margin: 5px 0 5px;
+    float: left;
+    min-height: 100px;
+}
+
+#contBrowser .imgItem{
+    border-radius: 8px;
+    width: 468px;
+    height: 612px;
+    position: relative;
+    display: inline-block;
+    color: white;
+    background-color: #999999;
+    margin: 9px;
+}
+
+#contBrowser .imgItem .imgTitle{
+    width: 432px;
+    height: 72px;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    margin: 0 0 0 0;
+    text-align: center;
+    line-height: 72px;
+    font-size: 36px;
+    color: white;
+}
+#contBrowser .imgItem .imgTitle h3{
+    font-size: inherit;
+}
+
+#contBrowser .imgItem .imgContainer{
+    width: 432px;
+    height: 432px;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    position: absolute;
+    left: 10px;
+    top: 55px;
+}
+
+#contBrowser .imgItem .description{
+    color: white;
+    width: 432px;
+    height: 54px;
+    line-height: 54px;
+    font-size: 29px;
+    position: absolute;
+    bottom: 18px;
+    left: 18px;
+    margin: 0 0 0 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+#contBrowser .imgItem .description p{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
