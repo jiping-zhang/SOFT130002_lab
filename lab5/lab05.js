@@ -23,9 +23,9 @@ function showWindowHref()
 		{
 			let index_andMark = targetStr.indexOf('&', index_name);
 			if (index_andMark !== -1)
-				url_result.value = targetStr.subtargetString((index_name + 5), index_andMark);
+				url_result.value = targetStr.substring((index_name + 5), index_andMark);
 			else
-				url_result.value = targetStr.subtargetString((index_name + 5), targetStr.length);
+				url_result.value = targetStr.substring((index_name + 5), targetStr.length);
 		}
 	}
 	else
@@ -77,7 +77,6 @@ function arrSameStr()
 	for (let i = 0; i < targetStr.length; i++)
 	{
 		let charAtI = targetStr.charAt(i);
-		console.log('char at '+i+" is " +charAtI)
 		let charAtIHasAppeared = false;
 		for (let j = 0; j < appearInfo.length; j++)
 		{
@@ -92,10 +91,6 @@ function arrSameStr()
 		{
 			appearInfo[appearInfo.length] = {character: charAtI, times: 1};
 		}
-	}
-	for (let j = 0; j < appearInfo.length; j++)
-	{
-		console.log(appearInfo[j]['character']+"  "+appearInfo[j]['times']+" times");
 	}
 	let indexOfMost = 0;
 	for (let j = 1; j < appearInfo.length; j++)
