@@ -44,11 +44,14 @@ let timer1 = window.setInterval(timeTest, 5000);
 
 function timeTest()
 {
-	countTimes++;
 	if (mul.value === '')
 		mul.value = '1';
 	else
+	{
 		mul.value = (parseInt(mul.value) * 2) + '';
+		countTimes++;
+	}
+
 	if (new Date().getMinutes() !== startMinute)
 	{
 		window.clearInterval(timer1);
