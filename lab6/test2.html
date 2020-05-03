@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+	function testTime()
+	{
+		let count = 0;
+		let value = 1;
+		console.log(value);
+		let startMinute = new Date().getMinutes();
+		let timer = setInterval(function ()
+		{
+			if (count > 10 || new Date().getMinutes() !== startMinute)
+				clearInterval(timer);
+			else
+			{
+				count++;
+				value *= 2;
+				console.log(value);
+			}
+		}, 5000)
+	}
+
+	testTime()
+</script>
+</body>
+</html>

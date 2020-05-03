@@ -14,13 +14,18 @@ function testTime()
 {
 	let count = 0;
 	let value = 1;
+	console.log(value);
 	let startMinute = new Date().getMinutes();
 	let timer = setInterval(function ()
 	{
 		if (count > 10 || new Date().getMinutes() !== startMinute)
-			clearInterval(timer)
-		count++;
-		value *= 2;
+			clearInterval(timer);
+		else
+		{
+			count++;
+			value *= 2;
+			console.log(value);
+		}
 	}, 5000)
 }
 
@@ -38,7 +43,8 @@ function testMail(telephone, mail)
 {
 	let telephone_regexp = /^1[3-9]\d{9}$/;
 	let mail_regexp = /\w[-\w.]*@([-A-Za-z0-9]+\.)+[A-Za-z]{2,14}/;
-	console.log("The telephone is " + (telephone_regexp.test(telephone)) ? "right" : "wrong" + " and the mail is " + (mail_regexp.test(mail)) ? "right" : "wrong" + "!");
+	let message="The telephone is " + ((telephone_regexp.test(telephone)) ? "right" : "wrong") + " and the mail is " + ((mail_regexp.test(mail)) ? "right" : "wrong") + "!";
+	console.log(message);
 }
 
 /*
@@ -70,10 +76,9 @@ function testRedundancy(str)
 			else
 				return 1;
 		}).slice(0, 10));
-		console.log(result);
 	}
+	console.log(result);
 }
-
 
 /*
 4.
@@ -99,11 +104,12 @@ function testKeyBoard(wantInput, actualInput)
 	for (let i = 0; i < wantInput.length; i++)
 	{
 		thisChar = wantInput.charAt(i);
-		hasChecked.add(thisChar);
 		if (!hasChecked.has(thisChar))
 			if (actualInput.indexOf(thisChar) === -1)
 				brokenKeys.add(thisChar);
+		hasChecked.add(thisChar);
 	}
+	console.log(brokenKeys);
 }
 
 /*
@@ -120,7 +126,7 @@ function testKeyBoard(wantInput, actualInput)
 */
 function testSpecialReverse(str)
 {
-	let pattern=/[\s]+/;
+	let pattern=/\s+/g;
 	str=str.replace(pattern," ");
 	let words=str.split(" ");
 	let result=words.reverse().join(" ");
@@ -150,7 +156,7 @@ function twoSum(nums, target)
 	{
 		x=target-nums[i];
 		if ((indexOfX=nums.indexOf(x))!==-1)
-			if (!map.has(x))
+			if (!map.has(indexOfX))
 				map.set(i,indexOfX);
 	}
 	console.log(map);
@@ -170,18 +176,6 @@ function twoSum(nums, target)
 */
 function lengthOfLongestSubstring(str)
 {
-/*	    int maxLength = 0;
-    int length = s.length();
-    int i = 0, j = 0;
-    HashMap<Character, Integer> hashMap = new HashMap<>();
-    for (; j < length; ++j){
-        if (hashMap.containsKey(s.charAt(j))){
-            i = Math.max(hashMap.get(s.charAt(j)) + 1, i);
-        }
-        maxLength = Math.max(maxLength, j - i + 1);
-        hashMap.put(s.charAt(j), j);
-    }
-    return maxLength;*/
 	let map = new Map();
 	let l = str.length;
 	let startPlace=0,j=0,maxLength=0;
@@ -192,7 +186,7 @@ function lengthOfLongestSubstring(str)
 		maxLength=Math.max(maxLength, j - startPlace + 1);
 		map.set(str.charAt(j),j);
 	}
-	console.log(map);
+	console.log(maxLength);
 }
 
 /*
