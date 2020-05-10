@@ -9,7 +9,7 @@ const flexContainer=document.getElementsByClassName("flex-container")[0];
 
 for (let i = 0; i < works.length; i++)
 {
-    let h3Element=document.createElement("h3");
+/*    let h3Element=document.createElement("h3");
     let h3Inner="Genre : "+works[i].tips;
     let h3Node=document.createTextNode(h3Inner);
     h3Element.appendChild(h3Node);
@@ -23,7 +23,23 @@ for (let i = 0; i < works.length; i++)
     let subNode=document.createTextNode(" lifetime "+works[i].lifetime);
     subElement.appendChild(subNode);
     h4Element.appendChild(subElement);
-    innerBox1.appendChild(h4Element);
+    innerBox1.appendChild(h4Element);*/
+
+    let h4Element=document.createElement("h4");
+    let h4Inner="Genre : "+works[i].tips;
+    let h4Node=document.createTextNode(h4Inner);
+    h4Element.appendChild(h4Node);
+
+    let innerBox1=document.createElement("div");
+    innerBox1.setAttribute("class","inner-box");
+    let h3Element=document.createElement("h3");
+    let h3Node=document.createTextNode(works[i].author+" ");
+    h3Element.appendChild(h3Node);
+    let subElement=document.createElement("sub");
+    let subNode=document.createTextNode(" lifetime "+works[i].lifetime);
+    subElement.appendChild(subNode);
+    h3Element.appendChild(subElement);
+    innerBox1.appendChild(h3Element);
 
     let innerBox2=document.createElement("div");
     innerBox2.setAttribute("class","inner-box");
@@ -46,7 +62,7 @@ for (let i = 0; i < works.length; i++)
 
     let itemElement=document.createElement("div");
     itemElement.setAttribute("class","item");
-    itemElement.appendChild(h3Element);
+    itemElement.appendChild(h4Element);
     itemElement.appendChild(innerBox1);
     itemElement.appendChild(innerBox2);
     itemElement.appendChild(buttonElement);
