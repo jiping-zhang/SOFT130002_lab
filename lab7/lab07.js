@@ -9,22 +9,6 @@ const flexContainer=document.getElementsByClassName("flex-container")[0];
 
 for (let i = 0; i < works.length; i++)
 {
-/*    let h3Element=document.createElement("h3");
-    let h3Inner="Genre : "+works[i].tips;
-    let h3Node=document.createTextNode(h3Inner);
-    h3Element.appendChild(h3Node);
-
-    let innerBox1=document.createElement("div");
-    innerBox1.setAttribute("class","inner-box");
-    let h4Element=document.createElement("h4");
-    let h4Node=document.createTextNode(works[i].author+" ");
-    h4Element.appendChild(h4Node);
-    let subElement=document.createElement("sub");
-    let subNode=document.createTextNode(" lifetime "+works[i].lifetime);
-    subElement.appendChild(subNode);
-    h4Element.appendChild(subElement);
-    innerBox1.appendChild(h4Element);*/
-
     let h4Element=document.createElement("h4");
     let h4Inner="Genre : "+works[i].tips;
     let h4Node=document.createTextNode(h4Inner);
@@ -33,20 +17,22 @@ for (let i = 0; i < works.length; i++)
     let innerBox1=document.createElement("div");
     innerBox1.setAttribute("class","inner-box");
     let h3Element=document.createElement("h3");
+    h3Element.style.display="inline";
     let h3Node=document.createTextNode(works[i].author+" ");
     h3Element.appendChild(h3Node);
-    let subElement=document.createElement("sub");
-    let subNode=document.createTextNode(" lifetime "+works[i].lifetime);
-    subElement.appendChild(subNode);
-    h3Element.appendChild(subElement);
+    let h5Element=document.createElement("h5");
+    h5Element.style.display="inline";
+    let h5Node=document.createTextNode("lifetime : "+works[i].lifetime);
+    h5Element.appendChild(h5Node);
     innerBox1.appendChild(h3Element);
+    innerBox1.appendChild(h5Element);
 
     let innerBox2=document.createElement("div");
     innerBox2.setAttribute("class","inner-box");
-    let h4Element2=document.createElement("h4");
-    let h4Node2=document.createTextNode("Popular photos");
-    h4Element2.appendChild(h4Node2);
-    innerBox2.appendChild(h4Element2);
+    let h3Element2=document.createElement("h3");
+    let h3Node2=document.createTextNode("Popular photos");
+    h3Element2.appendChild(h3Node2);
+    innerBox2.appendChild(h3Element2);
     let photos=works[i].photos;
     for (let j = 0; j < photos.length; j++)
     {
@@ -69,3 +55,52 @@ for (let i = 0; i < works.length; i++)
 
     flexContainer.appendChild(itemElement)
 }
+
+/*
+for (let i = 0; i < works.length; i++)
+{
+
+    let item = document.createElement("div");
+    item.setAttribute("class", "item");
+
+    let genre = document.createElement("h3");
+    item.appendChild(genre);
+    genre.innerHTML = "Genre : " + works[i]["tips"];
+
+
+    let inner_box1 = document.createElement("div");
+    item.appendChild(inner_box1);
+    inner_box1.setAttribute("class", "inner-box");
+
+    let author = document.createElement("h3");
+    inner_box1.appendChild(author);
+    author.innerHTML = works[i]["author"];
+    author.style.display = "inline";
+
+    let lifetime = document.createElement("h5");
+    inner_box1.appendChild(lifetime);
+    lifetime.innerHTML = "lifetime: " + works[i]["lifetime"];
+    lifetime.style.display = "inline";
+    lifetime.style.marginLeft = "1em";
+
+    let inner_box2 = document.createElement("div");
+    item.appendChild(inner_box2);
+    inner_box2.setAttribute("class", "inner-box");
+
+    let Popular_photo = document.createElement("h3");
+    inner_box2.appendChild(Popular_photo);
+    let popular = document.createTextNode("Popular photos");
+    Popular_photo.appendChild(popular);
+
+    for (let j = 0, jmax = works[i]["photos"].length; j < jmax; j++)
+    {
+        let photo = document.createElement("img");
+        inner_box2.appendChild(photo);
+        photo.setAttribute("class", "photo");
+        photo.src = works[i]["photos"][j];
+    }
+
+    let button = document.createElement("button");
+
+    flexContainer.appendChild(item);
+}*/
