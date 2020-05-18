@@ -18,6 +18,7 @@ const numberOfPages = pageBts.length;
 const wheelWidth=widthPerImg*numberOfPages;
 const container = document.getElementsByClassName("container")[0];
 const editableTdElements = document.getElementById("bd").getElementsByTagName("table")[0].getElementsByTagName("td");
+let editingTdElementIndex;
 const gotoFormerPage = (function ()
 {
 	let framesHasPlayed = 0;
@@ -191,15 +192,20 @@ for (let i = 0; i < editableTdElements.length; i++)
 	editableTdElements[i].setAttribute("contenteditable", "true");
 	editableTdElements[i].onclick = function ()
 	{
-		this.style.backgroundColor = "#fffec5";
-		this.focus();
-		let range = window.getSelection();
-		range.selectAllChildren(this);
-		range.collapseToStart();
+		if (editingTdElementIndex!==i)
+		{
+			this.style.backgroundColor = "#fffec5";
+			this.focus();
+			let range = window.getSelection();
+			range.selectAllChildren(this);
+			range.collapseToStart();
+			editingTdElementIndex=i;
+		}
 	};
 	editableTdElements[i].onblur = function ()
 	{
 		this.style.backgroundColor = "#ffffff";
+		editingTdElementIndex=undefined;
 	};
 }
 
