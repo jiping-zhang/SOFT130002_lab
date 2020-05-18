@@ -189,9 +189,13 @@ for (let i = 0; i < numberOfPages; i++)
 for (let i = 0; i < editableTdElements.length; i++)
 {
 	editableTdElements[i].setAttribute("contenteditable", "true");
-	editableTdElements[i].onfocus = function ()
+	editableTdElements[i].onclick = function ()
 	{
 		this.style.backgroundColor = "#fffec5";
+		this.focus();
+		let range = window.getSelection();
+		range.selectAllChildren(this);
+		range.collapseToStart();
 	};
 	editableTdElements[i].onblur = function ()
 	{
