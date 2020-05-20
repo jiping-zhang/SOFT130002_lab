@@ -4,7 +4,7 @@
 /*Global Variable Area */
 let currentPageIndex = 1; //当前图片的页码（注意，这里从1开始而非从0开始）
 let isPlaying = false;  //是否有动画正在播放
-let shouldContinue = true; //是否自动播放动画（鼠标不在图片展示区上的时候为true）
+let autoPlay = true; //是否自动播放动画（鼠标不在图片展示区上的时候为true）
 const timePerAnimation = 500;  //每次翻一页的过渡动画时长（单位：ms）
 const timePerFrame = 20;   //每一帧持续时长（单位：ms）
 const framesPerAnimation = timePerAnimation / timePerFrame; //每次翻一页的过渡动画帧数
@@ -130,15 +130,15 @@ latterImgBt.onclick = function ()
 /*Code Here*/
 container.onmouseover = function ()
 {
-	shouldContinue = false;
+	autoPlay = false;
 };
 container.onmouseleave = function ()
 {
-	shouldContinue = true;
+	autoPlay = true;
 };
 setInterval(function ()
 {
-	if (shouldContinue)
+	if (autoPlay)
 		gotoLatterPage(1);
 }, 2000);
 
