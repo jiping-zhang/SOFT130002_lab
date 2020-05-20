@@ -157,12 +157,26 @@ setInterval(function ()
 /*Code Here*/
 const turnToPage = (function ()
 {
+	let former,latter;
 	return function (targetIndex)
 	{
-		if (targetIndex>currentPageIndex)
+		if (targetIndex!==currentPageIndex)
+		{
+			former=currentPageIndex-targetIndex;
+			if (former<0)
+				former+=numberOfPages;
+			latter=targetIndex-currentPageIndex;
+			if (latter<0)
+				latter+=numberOfPages;
+			if (former<latter)
+				gotoFormerPage(former);
+			else
+				gotoLatterPage(latter);
+		}
+		/*if (targetIndex>currentPageIndex)
 			gotoLatterPage(targetIndex-currentPageIndex);
 		else if (targetIndex<currentPageIndex)
-			gotoFormerPage(currentPageIndex-targetIndex);
+			gotoFormerPage(currentPageIndex-targetIndex);*/
 	}
 })();
 for (let i = 0; i < numberOfPages; i++)

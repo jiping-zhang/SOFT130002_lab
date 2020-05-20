@@ -10,6 +10,10 @@ a{
     width: max-content;
     margin: 10px auto 10px;
 }
+h3{
+    margin: 10px auto 10px;
+    text-align: center;
+}
 .container {
     position: relative;
     width: 600px;
