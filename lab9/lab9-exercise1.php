@@ -18,8 +18,8 @@ echo "<br>"; */
 $date = date("l ,M dS, Y H:i:s ");
 echo "This page was generated: " . $date . "<hr/>";
 
-$remainingDays=365-(int)date("z")+(int)date("L");
-echo "There are ". $remainingDays . " days left in the year";
+$remaining=365-(int)date("z")+(int)date("L");
+echo "There are ". $remaining . " days left in the year";
 
 ?>
 </body>
